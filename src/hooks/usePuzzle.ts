@@ -11,8 +11,8 @@ const TARGET_IMAGES = [
   'https://www.bhaktapur.com/wp-content/uploads/2020/04/chyasalin_mandap-1.jpg',
   'https://www.bhaktapur.com/wp-content/uploads/2020/03/55-windowpalace-1200x900.jpg',
   'https://www.bhaktapur.com/wp-content/uploads/2020/03/dattatreya-.jpg',
-  'https://www.bhaktapur.com/wp-content/uploads/2020/04/kalamasi-1200x900.jpg',
-  'https://images.unsplash.com/photo-1537522306408-8435f315b2e3?w=300&h=300&fit=crop',
+  'https://www.bhaktapur.com/wp-content/uploads/2021/01/Wodcarving-museum-bhaktapur.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/4/43/Na_Pukhu_-_Bhaktapur_-_02.jpg',
 ];
 
 const GRID_SIZE = 9;

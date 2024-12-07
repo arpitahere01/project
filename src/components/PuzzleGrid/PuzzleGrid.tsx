@@ -42,7 +42,7 @@ const PuzzleGrid: React.FC = () => {
 {showCertificate && <Certificate onClose={handleCloseCertificate} />} {/* Pass the onClose function */}
 
       
-      <div className="grid grid-cols-3 gap-2 bg-gray-200 p-2 rounded-lg">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 bg-gray-200 p-4 rounded-lg">
         {pieces.map((piece) => (
           <div key={piece.id} className="w-[200px] h-[200px]">
             <PuzzlePiece

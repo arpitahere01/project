@@ -27,6 +27,19 @@ const PuzzlePiece: React.FC<PuzzlePieceProps> = ({
   const [isEditing, setIsEditing] = useState(false);
   const [tempHint, setTempHint] = useState(hint);
 
+  // Predefined information based on pieceId
+  const predefinedInfo: { [key: number]: string } = {
+    1: 'National Art Museum One of the best acquisition hubs of medieval as well as the lichhavi art and history ',
+    2: 'Chuma Ganesh  the very first Ganesh temple of Bhaktapur. It is said that the rats of that area beyond their nature scared the cats. ',
+     3: 'Pottery square  T square full of  pottery works. It also owns several shrines like the Ganesh shrine, Vishnu temple, etc. ',
+      4: 'Chyasalin Mandap A pavilion ; not a temple. There is a Hindu concept that one should not live in front of the glorious deity.', 
+      5: '55 Window Palace with its 55 windows stands as a testament to its intricate and unparalleled craftsmanship',
+       6: ' Dattatraya temple Oldest square among four charming squares of bhaktapur.',
+       7: ' Wood carving museum At once, it used to be the pujari math of Tachupal Chowk but now it is considered one of the significant museums of  Bhaktapur.',
+       8: '   Naḥ pukhu was believed to have built in a single night by a wizard in 1168, hence it is also called Guhya pukhu, meaning secretive pond.',
+        // 9: 'Information about place 9',
+  };
+
   const handleHintSubmit = () => {
     onHintUpdate(tempHint);
     setIsEditing(false);
@@ -34,6 +47,11 @@ const PuzzlePiece: React.FC<PuzzlePieceProps> = ({
 
   const handleImageInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     onImageUpload(e, pieceId);
+
+    // Automatically set hint based on predefined information
+    if (predefinedInfo[pieceId]) {
+      onHintUpdate(predefinedInfo[pieceId]);
+    }
   };
 
   return (
@@ -60,6 +78,7 @@ const PuzzlePiece: React.FC<PuzzlePieceProps> = ({
               <input
                 type="file"
                 className="hidden"
+                capture="user"
                 accept="image/*"
                 onChange={handleImageInputChange}
                 onClick={(e) => e.stopPropagation()}
@@ -97,11 +116,7 @@ const PuzzlePiece: React.FC<PuzzlePieceProps> = ({
               </div>
             ) : (
               <>
-               <p className="text-center text-gray-700">{hint || 'Add information about this place'}</p>
-               
-
-                {/* make a component that component will receive data dynamically about matched iamge thus that component will then
-                show the data what you send */}
+                <p className="text-center text-gray-700">{hint || 'Nyatapola Temple a five-storeyed ancient temple with 5 Ganesha, 5 tiers, 5 plinths, 33 steps, 108 struts, and  360 battens. '}</p>
                 <button
                   className="absolute top-2 right-2 p-1 rounded-full hover:bg-gray-100"
                   onClick={(e) => {

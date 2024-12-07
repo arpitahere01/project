@@ -24,7 +24,7 @@ const Login = () => {
   
     <div className="login-container">
       <form onSubmit={handleSubmit}>
-        <h>Roots and Riddle</h>
+        <h1>Roots and Riddles</h1>
         <img src="src\images\logo3 - Copy.jpg" alt="logo of roots and riddle" />
         <div className="form-group">
           <label>Username</label>
